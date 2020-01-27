@@ -1,0 +1,32 @@
+{% extends '../layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+    {% block content %} 
+    <h1>Registration Page</h1>
+    {% if (messages.success)  %}
+        <p>{{ messages.success }}</p>
+    {% endif  %}  
+    {% if (messages.error)  %}
+        <p>{{ messages.error }}</p>
+    {% endif  %}
+    
+    <form method="POST" action="/users/register">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>:&nbsp;<input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:&nbsp;<input type="email" name="email"/></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:&nbsp;<input type="password" name="password"/></td>
+            </tr>
+        </table>
+        <button type="submit">Register</button>
+    </form>
+	{% endblock content %} 
+
